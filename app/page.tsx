@@ -70,7 +70,7 @@ const Dashboard = () => {
     },
     {
       id: 6,
-      name: "603 - OS",
+      name: "606 - OS",
       pdfs: [
         { name: "Chapter 1", path: "/pdfs/OS/1.pdf" },
         { name: "Chapter 2", path: "/pdfs/OS/2.pdf" },
