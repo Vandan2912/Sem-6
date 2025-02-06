@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Folder, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import PDFViewer from "./PDFViewer";
+import DynamicPdfViewer from "./DynamicPdfViewer";
 
 const Dashboard = () => {
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
@@ -97,7 +97,7 @@ const Dashboard = () => {
   const syllabusPdfs = [{ id: 1, name: "Practical Syllabus", path: "/pdfs/Practical_Exam_Syllabus.pdf" }];
 
   if (selectedPdf) {
-    return <PDFViewer pdfPath={selectedPdf} setSelectedPdf={setSelectedPdf} />;
+    return <DynamicPdfViewer pdfPath={selectedPdf} setSelectedPdf={setSelectedPdf} />;
   }
 
   return (
