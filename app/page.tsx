@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Folder, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import DynamicPdfViewer from "./DynamicPdfViewer";
@@ -96,7 +96,10 @@ const Dashboard = () => {
 
   const syllabusPdfs = [{ id: 1, name: "Practical Syllabus", path: "/pdfs/Practical_Exam_Syllabus.pdf" }];
 
-  if (selectedPdf) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (selectedPdf && mounted) {
     return <DynamicPdfViewer pdfPath={selectedPdf} setSelectedPdf={setSelectedPdf} />;
   }
 
